@@ -8,7 +8,7 @@ const swaggerFile = require('./app/config/swagger_output.json')
 
 const app = express();
 var corsOptions = {
-  origin: "http://localhost:3000",
+  origin: "http://192.168.1.136:3000",
 };
 
 const db = require("./app/models");

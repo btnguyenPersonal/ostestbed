@@ -15,7 +15,8 @@ const doc = {
         title: "OSTestBed API",
         description: "OSTestBed API"
     },
-    host: "localhost:8080",
+    //host: "localhost:8080",
+    host: "192.168.1.136:8080",
     basePath: "/",
     schemes: ['http', 'https'],
     consumes: ['application/json'],

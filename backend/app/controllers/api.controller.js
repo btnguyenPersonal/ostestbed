@@ -31,7 +31,7 @@ exports.restart = async (req, res) => {
     return;
   }
   //This code will eventually be moved into a "runCommand" function.
-  let command = ` ./reboot.sh ${id}`;
+  let command = `cd scripts; ./reboot.sh ${id}`;
   if (process.env.OS.includes("Windows")) {
     command = "cd"; //Windows can't run our command without Windows Subsystem for Linux (WSL) and I can't install it lol.
   }
@@ -39,7 +39,7 @@ exports.restart = async (req, res) => {
     .then((r) => {
       if (!r.stderr) {
         res.status(200).send({
-          message: "Command executed successfully.",
+          message: "Command executed successfully.\n" + r.stdout,
         });
       } else {
         res.status(500).send({
