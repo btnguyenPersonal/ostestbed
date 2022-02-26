@@ -1,3 +1,5 @@
+require("dotenv").config();
+
 const swaggerAutogen = require('swagger-autogen')()
 
 const outputFile = './app/config/swagger_output.json'
@@ -16,7 +18,7 @@ const doc = {
         description: "OSTestBed API"
     },
     //host: "localhost:8080",
-    host: "192.168.1.136:8080",
+    host: `${process.env.IP}:8080`,
     basePath: "/",
     schemes: ['http', 'https'],
     consumes: ['application/json'],
